@@ -1,180 +1,70 @@
-.image-hover-container {
+$size: 420px;
+
+.image-container {
 	position: relative;
 	height: 100vh;
 	width: 100%;
-	display: flex;
+  display: flex;
+  overflow: hidden;
+  
 	.container {
 		position: relative;
-		height: 430px;
-		width: 310px;
-		margin: auto;
-		display: -webkit-box;
+		height: $size;
+		width: $size;
+    margin: auto;
+    transition: 1s;
+    
 		&:hover {
-			> .bottom-right {
-				top: 55%;
-				left: 80%;
-				box-shadow: 0px 37px 29px rgba(0, 0, 0, 0.3);
-				width: 350px;			
-			}
-			> .middle {
-				height: 90%;
-				left: 5%;
-				top: 5%;
-				width: 90%;
-				box-shadow: 0px 23px 33px rgba(0, 0, 0, 0.34);
-				.overlay {
-					opacity: 1;
-					z-index: 1;
+      .middle {
 
-					p:nth-child(1) {
-						padding-top: 0;
-					}
-				}
-			}
-			> .top-left {
-				left: -70px;
-				top: -90px;
-				width: 150px;
-				box-shadow: 0px 37px 29px rgba(0, 0, 0, 0.3);
-			}
-			> .top-right {
-				 left: 250px;
-				 top: -90px;
-				 width: 260px;
-				 height: 280px;
-				box-shadow: 0px 37px 29px rgba(0, 0, 0, 0.3);
-			}
-			> .bottom-left {
-				left: -89%;
-				top: 65%;
-				width: 360px;
-				box-shadow: 0px 37px 29px rgba(0, 0, 0, 0.3);
-			}
-		
-		}
-		.lake-district {
-			background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/769286/lake-district-min.jpg) no-repeat;
-		}
-		.bg-image {
-			background-size: cover;
-			background-attachment: fixed;
-			background-position: 10% 10%; 
+
+      }
+      .cube {
+        box-shadow: 0px 37px 29px rgba(0, 0, 0, 0.3);
+        transition: 1s;
+
+      }
+      .bottom-right {
+        right: -50%;
+      }
+      .top-left {
+        top: -50%;
+      }
+      .top-right {
+        bottom: -50%;
+      }
+      .bottom-left {
+        left: -50%;
+      }
+    }
+  }
+		.cube, .middle {
+      background: url(./media/basic-pics/sunset_minimal_landscape_4k.jpg) no-repeat center/cover;
+      position: absolute;
+      height: $size;
+      width: $size;
 		}
 		.middle {
-			transition: 500ms all;
-			 transition-delay: 0.25s;
-			transition-timing-function: cubic-bezier(.17,.67,.33,.97);
-			position: relative;
-			margin: auto;
-			height: 100%;
-			width: 100%;
-			
-			margin: 0px;
-			left: 0;
-			top: 0;
-			box-shadow: 0px 17px 23px rgba(0, 0, 0, 0.34);
-			.bg-image {
-				height: 100%;
-				width: 100%;	
-			}
-			.overlay {
-				position: absolute;
-				top: 0;
-				left: 0;
-				height: 100%;
-				width: 100%;
-				z-index: 9;
-				background: rgba(67, 27, 12, 0.75);
-				display: flex;
-				flex-direction: column;
-				transition: 300ms all;
-			  transition-delay: 0.37s;
-				opacity: 0;
-				text-decoration: none;
-				z-index: -1;
-				p {
-					position: relative;
-					margin: auto;
-					color: #fff;
-					text-transform: uppercase;
-					font-family: 'Roboto', sans-serif;
-					font-size: 1.1em;
-					opacity: 0.8;
-					&:nth-child(1) {
-						margin-bottom: 4px !important;
-						padding-top: 30px;
-						transition: all 400ms;
-						transition-delay: 0.3s;
-					}
-					&:nth-child(2) {
-						margin-top: 4px !important;
-					}
-					
-				}
-				.mobile-link {
-					display: none;
-				}
-			}
-		}
-		.bottom-right {
-			transition: 800ms all;
-			transition-delay: 0.15s;
+			transition: .5s all .25s;
 			transition-timing-function: cubic-bezier(.17,.67,.33,.97);
 			position: absolute;
-			left: 0%;
-			top: 48%;
-			width: 100%;
-			box-shadow: 0px 37px 29px rgba(0, 0, 0, 0);
-			z-index: 1;
-			.bg-image {
-				height: 220px;
-				width: 100%;	
-			}
-		}
-		.bottom-left {
-			transition: 800ms all;
-			transition-delay: 0.17s;
-			transition-timing-function: cubic-bezier(.17,.67,.33,.97);
-			position: absolute;
-			left: 0%;
-			top: 48%;
-			width: 100%;
-			z-index: 1;
-			.bg-image {
-				height: 220px;
-				width: 100%;	
-			}
-		}
-		
-		.top-left {
-			transition-timing-function: cubic-bezier(.17,.67,.33,.97);
-			transition: 600ms all;
-			transition-delay: 0.19s;
-			position: absolute;
-			left: 0%;
-			top: 0%;
-			width: 150px;
-			z-index: 1;
-			.bg-image {
-				height: 220px;
-				width: 100%;	
-			}
-		}
-		.top-right {
-			transition: 500ms all;
-			transition-delay: 0.08s;
-			position: absolute;
-			left: 0%;
-			top: 0%;
-			width: 300px;
-			height: 260px;
-			z-index: 1;
-			transition-timing-function: cubic-bezier(.17,.67,.33,.97);
-			.bg-image {
-				 float: right;
-				 height: 100%;
-				 width: 100%;
-			}
-		}	
-	}
-}
+      margin: auto;
+      z-index: 2;
+      box-shadow: 0px 17px 23px rgba(0, 0, 0, 0.34);
+
+      &:hover {
+        transform: scale(0.7);
+        background: #D97544;
+      }
+
+      &:hover a {
+        opacity: 1;
+        visibility: visible;
+      }
+      a {
+        position: relative;
+        opacity: 0;
+        visibility: hidden;
+      }
+    }
+  }
