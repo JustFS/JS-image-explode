@@ -1,59 +1,65 @@
-.image-container {
-  position: relative;
-  height: 100vh;
-  width: 100%;
-  display: flex;
-  overflow: hidden;
-}
-.image-container .container {
-  position: relative;
-  height: 420px;
-  width: 420px;
-  margin: auto;
-  transition: 1s;
-}
-.image-container .container:hover .cube {
-  box-shadow: 0px 37px 29px rgba(0, 0, 0, 0.3);
-  transition: 1s;
-}
-.image-container .container:hover .bottom-right {
-  right: -50%;
-}
-.image-container .container:hover .top-left {
-  top: -50%;
-}
-.image-container .container:hover .top-right {
-  bottom: -50%;
-}
-.image-container .container:hover .bottom-left {
-  left: -50%;
-}
-.image-container .cube, .image-container .middle {
-  background: url(./media/basic-pics/sunset_minimal_landscape_4k.jpg) no-repeat center/cover;
-  position: absolute;
-  height: 420px;
-  width: 420px;
-}
-.image-container .middle {
-  transition: 0.5s all 0.25s;
-  transition-timing-function: cubic-bezier(0.17, 0.67, 0.33, 0.97);
-  position: absolute;
-  margin: auto;
-  z-index: 2;
-  box-shadow: 0px 17px 23px rgba(0, 0, 0, 0.34);
-}
-.image-container .middle:hover {
-  transform: scale(0.7);
-  background: #D97544;
-}
-.image-container .middle:hover a {
-  opacity: 1;
-  visibility: visible;
-}
-.image-container .middle a {
-  position: relative;
-  opacity: 0;
-  visibility: hidden;
+body {
+  margin: 0;
+  font-size: 18px;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-style: normal;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  letter-spacing: 0.05em;
 }
 
-/*# sourceMappingURL=style.css.map */
+* {
+  position: relative;
+  box-sizing: border-box;
+}
+
+.box {
+  width: 400px;
+  height: 200px;
+  color: white;
+  margin: 0 auto;
+  margin-bottom: 24px;
+}
+
+.box > div {
+  display: flex;
+  position: absolute;
+  top: 0;
+  width: 400px;
+  height: 200px;
+  background: linear-gradient(220deg, #3d45b1, #844efc);
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 16px;
+  border-radius: 16px;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+  transform-origin: top center;
+  will-change: transform;
+  overflow: hidden;
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.label {
+  font-weight: bold;
+  font-size: 12px;
+  margin-bottom: 6px;
+}
+
+.value-right {
+  text-align: right;
+}
+
+svg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
